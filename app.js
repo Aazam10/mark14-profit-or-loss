@@ -37,6 +37,10 @@ function calculateProfitAndLoss() {
        outputDivRef.innerText = `You have no profit no loss`;
     } 
 }
+else{
+    outputDivRef.innerText="";
+    
+}
    
 }
 function hidebgcolor(){
