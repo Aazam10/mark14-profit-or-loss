@@ -14,7 +14,7 @@ function calculateProfitAndLoss() {
     var buyingPrice = Number(initialPrice.value);
     var quantity = Number(quantityOfStocks.value);
     var currentPrice = Number(finalPrice.value);
-    if(buyingPrice!==0 && quantity !==0 && currentPrice!==0){
+    if(!(buyingPrice<=0) && !(quantity<=0) && !(currentPrice<=0)){
     
      if (currentPrice > buyingPrice) {
         var profitPerShare = (currentPrice - buyingPrice);
@@ -40,7 +40,10 @@ function calculateProfitAndLoss() {
         else  {
        outputDivRef.innerText = `You have no profit no loss`;
     } 
-}else{
+}else if((buyingPrice<0)||(quantity <0)||(currentPrice<0)){
+    outputDivRef.innerText = `NEGATIVE VALUES ARE NOT ALLOWED.`;
+}
+else{
     outputDivRef.innerText = `ALL INPUT FIELDS ARE MANDATORY.`;
 }
 
